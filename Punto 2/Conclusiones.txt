@@ -1,0 +1,5 @@
+Se puede concluir que los endpoints consulta, crean y actualizan la información de acuerdo a lo planteado en la documentación.
+
+Se realizaron los test mencionados en la prueba técnica de forma exitosa, además de que se verificaron los status codes y el body de respuesta.
+
+Se agregó la librería de "newman-reporter-html" para generar el reporte de las pruebas de api ejecutas.

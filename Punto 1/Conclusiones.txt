@@ -1,0 +1,6 @@
+Se puede concluir que la plataforma es rápida y eficiente, varias etiquetas no tienen un "data-test" implementado, de tal manera que para llegar al selector se debe 
+hacer de forma nativa desde cypress.
+
+Se realizaron los test mensionados en la prueba tecnica de forma exitosa, ademas de que se utilizo el patron de diseño page object model, para mayor eficiencia y eficacia.
+
+Se agregó la librería de "cypress-mochawesome-reporter" para generar el reporte de las pruebas ejecutas.

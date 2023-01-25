@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "c70c8c61-7d4a-4679-9b4b-eed8e99ad288",
+		"name": "Prueba Tecnica punto apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22901360"
+	},
+	"item": [
+		{
+			"name": "Añadir una mascota a la tienda Modelo de trabajo con Proveedores – Chapter SQA 8 - Status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.name).to.eql(\"Pruebas Norbert Forero\");",
+							"    pm.expect(jsonData.name).to.eql(\"Lucas\");",
+							"    pm.expect(jsonData.photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
+							"    pm.expect(jsonData.tags[0].id).to.eql(458);",
+							"    pm.expect(jsonData.tags[0].name).to.eql(\"Lucas\");",
+							"    pm.expect(jsonData.status).to.eql(\"available\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2027,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"{{NamePetOwner}}\"\n    },\n    \"name\": \"Lucas\",\n    \"photoUrls\": [\n        \"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 458,\n            \"name\": \"{{NamePet}}\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir una mascota a la tienda Modelo de trabajo con Proveedores – Chapter SQA 8 - Status 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.code).to.eql(405);",
+							"    pm.expect(jsonData.type).to.eql(\"unknown\");",
+							"    pm.expect(jsonData.message).to.eql(\"no data\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar la mascota ingresada previamente (Búsqueda por ID) - Status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.name).to.eql(\"Pruebas Norbert Forero\");",
+							"    pm.expect(jsonData.name).to.eql(\"Lucas\");",
+							"    pm.expect(jsonData.photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
+							"    pm.expect(jsonData.tags[0].id).to.eql(458);",
+							"    pm.expect(jsonData.tags[0].name).to.eql(\"Lucas\");",
+							"    pm.expect(jsonData.status).to.eql(\"available\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "api_key",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/2027",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"2027"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar la mascota ingresada previamente (Búsqueda por ID) - Status 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.code).to.eql(1);",
+							"    pm.expect(jsonData.type).to.eql(\"error\");",
+							"    pm.expect(jsonData.message).to.eql(\"Pet not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "api_key",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/8",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar la mascota ingresada previamente (Búsqueda por ID) - Status 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.code).to.eql(405);",
+							"    pm.expect(jsonData.type).to.eql(\"unknown\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "api_key",
+						"value": "test"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar el nombre de la mascota y el estatus de la mascota a “sold” - Status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.id).to.eql(1);",
+							"    pm.expect(jsonData.category.name).to.eql(\"Pruebas Norbert Forero\");",
+							"    pm.expect(jsonData.name).to.eql(\"Lucas Forero\");",
+							"    pm.expect(jsonData.photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
+							"    pm.expect(jsonData.tags[0].id).to.eql(458);",
+							"    pm.expect(jsonData.tags[0].name).to.eql(\"Perro\");",
+							"    pm.expect(jsonData.status).to.eql(\"sold\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2027,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Pruebas Norbert Forero\"\n    },\n    \"name\": \"Lucas Forero\",\n    \"photoUrls\": [\n        \"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 458,\n            \"name\": \"Perro\"\n        }\n    ],\n    \"status\": \"sold\"\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar el nombre de la mascota y el estatus de la mascota a “sold” - Status 405",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.code).to.eql(405);",
+							"    pm.expect(jsonData.type).to.eql(\"unknown\");",
+							"    pm.expect(jsonData.message).to.eql(\"no data\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar el nombre de la mascota y el estatus de la mascota a “sold” - Status 500",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData.code).to.eql(500);",
+							"    pm.expect(jsonData.type).to.eql(\"unknown\");",
+							"    pm.expect(jsonData.message).to.eql(\"something bad happened\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3423452435435435432523454353452345345435,\n    \"category\": {\n        \"id\": 1,\n        \"name\": \"Pruebas Norbert Forero\"\n    },\n    \"name\": \"Lucas Forero\",\n    \"photoUrls\": [\n        \"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 458,\n            \"name\": \"Perro\"\n        }\n    ],\n    \"status\": \"sold\"\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar la mascota modificada por estatus (Búsqueda por estatus) - Status 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate body response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    ",
+							"    pm.expect(jsonData[1].category.id).to.eql(1);",
+							"    pm.expect(jsonData[1].category.id).to.eql(1);",
+							"    pm.expect(jsonData[1].category.name).to.eql(\"Pruebas Norbert Forero\");",
+							"    pm.expect(jsonData[1].name).to.eql(\"Lucas Forero\");",
+							"    pm.expect(jsonData[1].photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
+							"    pm.expect(jsonData[1].tags[0].id).to.eql(458);",
+							"    pm.expect(jsonData[1].tags[0].name).to.eql(\"Perro\");",
+							"    pm.expect(jsonData[1].status).to.eql(\"sold\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer 3e94bcc7-b1e4-491e-b871-c50eca476b13"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=sold",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.collectionVariables.set(\"NamePet\", \"Lucas\");",
+					"pm.collectionVariables.set(\"NamePetOwner\", \"Pruebas Norbert Forero\");",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "NamePet",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "NamePetOwner",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+    "User": {
+        "Name": "nforero",
+        "Password": "Password123"
+    },
+    "PageLogin":{
+        "Title": "Log in",
+        "SubtitleOne": "Username:",
+        "SubtitleTwo": "Password:",
+        "ButtonClose": "Close",
+        "ButtonLogin": "Log in"
+    }
+}

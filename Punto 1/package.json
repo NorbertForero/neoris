@@ -1,0 +1,16 @@
+{
+  "name": "prueba-tecnica",
+  "version": "1.0.0",
+  "description": "Prueba tecnica para NEORIS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress-report": "cypress run --spec cypress/e2e/tests/Tests.spec.js --browser chrome --headed"
+  },
+  "author": "Norbert Forero",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.4.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  }
+}
