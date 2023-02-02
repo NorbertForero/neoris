@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c70c8c61-7d4a-4679-9b4b-eed8e99ad288",
+		"_postman_id": "bb49d766-c678-4ba7-967f-0d4e431a2739",
 		"name": "Prueba Tecnica punto apis",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22901360"
@@ -477,14 +477,14 @@
 							"pm.test(\"Validate body response\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    ",
-							"    pm.expect(jsonData[1].category.id).to.eql(1);",
-							"    pm.expect(jsonData[1].category.id).to.eql(1);",
-							"    pm.expect(jsonData[1].category.name).to.eql(\"Pruebas Norbert Forero\");",
-							"    pm.expect(jsonData[1].name).to.eql(\"Lucas Forero\");",
-							"    pm.expect(jsonData[1].photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
-							"    pm.expect(jsonData[1].tags[0].id).to.eql(458);",
-							"    pm.expect(jsonData[1].tags[0].name).to.eql(\"Perro\");",
-							"    pm.expect(jsonData[1].status).to.eql(\"sold\");",
+							"    pm.expect(jsonData[6].category.id).to.eql(1);",
+							"    pm.expect(jsonData[6].category.id).to.eql(1);",
+							"    pm.expect(jsonData[6].category.name).to.eql(\"Pruebas Norbert Forero\");",
+							"    pm.expect(jsonData[6].name).to.eql(\"Lucas Forero\");",
+							"    pm.expect(jsonData[6].photoUrls[0]).to.eql(\"https://www.lavanguardia.com/files/image_607_341/files/fp/uploads/2021/11/03/61826649898bf.r_d.585-355-6403.jpeg\");",
+							"    pm.expect(jsonData[6].tags[0].id).to.eql(458);",
+							"    pm.expect(jsonData[6].tags[0].name).to.eql(\"Perro\");",
+							"    pm.expect(jsonData[6].status).to.eql(\"sold\");",
 							"});"
 						],
 						"type": "text/javascript"
